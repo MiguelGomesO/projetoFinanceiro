@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import url("https://cdn.jsdelivr.net/npm/@tremor/react@latest/dist/tremor.css");
+
+@custom-variant dark (&:where(.dark, .dark *));
