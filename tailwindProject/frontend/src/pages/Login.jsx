@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = "https://projetofinanceirobackend.onrender.com";
+
 export default function Login() {
     const navigate = useNavigate();
 
@@ -17,7 +19,7 @@ export default function Login() {
         }
 
         try {
-            const res = await fetch("https://projetofinanceirobackend.onrender.com", {
+            const res = await fetch(`${API_URL}/login`, {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({ email, password })
@@ -26,7 +28,7 @@ export default function Login() {
             const data = await res.json();
 
             if (!res.ok) {
-                setErro(data.message || "Erro ao logar");
+                setErro(data.msg || "Erro ao logar");
                 return;
             }
             
