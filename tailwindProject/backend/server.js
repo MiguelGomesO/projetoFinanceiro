@@ -17,6 +17,10 @@ export const pool = new Pool({
   ssl: { rejectUnauthorized: false }, // essencial para Neon
 });
 
+app.post("/teste", (req, res) => {
+    res.json({ msg: "Backend funcionando com POST!" });
+});
+
 app.get("/", (req, res) => res.send("Servidor rodando"));
 
 // Rotas
