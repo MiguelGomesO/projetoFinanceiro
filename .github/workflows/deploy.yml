@@ -19,6 +19,6 @@ jobs:
       - name: Rodar backend
         run: |
           cd tailwindProject
-          node index.js
+          node server.js
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
