@@ -1,0 +1,18 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Instalar dependências
+        run: npm install
+      - name: Rodar backend
+        run: node index.js
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
