@@ -17,7 +17,7 @@ export default function Login() {
         }
 
         try {
-            const res = await fetch("http://localhost:3001/login", {
+            const res = await fetch("https://projetofinanceirobackend.onrender.com", {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({ email, password })
