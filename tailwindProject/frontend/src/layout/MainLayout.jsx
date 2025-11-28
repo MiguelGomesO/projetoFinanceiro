@@ -1,5 +1,3 @@
-import Sidebar from "../components/Sidebar";
-import Header from "../components/header";
 import { NavLink, Outlet } from "react-router-dom";
 import { LayoutDashboard, Wallet, List, PlusCircle, Sun, Moon } from "lucide-react";
 import useDarkMode from "../hooks/useDarkMode";
