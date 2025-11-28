@@ -17,6 +17,8 @@ export const pool = new Pool({
   ssl: { rejectUnauthorized: false }, // essencial para Neon
 });
 
+app.get("/", (req, res) => res.send("Servidor rodando"));
+
 // Rotas
 app.post("/register", async (req, res) => {
   const { nome, email, password } = req.body;
