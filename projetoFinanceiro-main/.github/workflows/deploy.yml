@@ -1,0 +1,24 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Entrar no projeto e instalar dependências
+        run: |
+          cd tailwindProject
+          npm install
+
+      - name: Rodar backend
+        run: |
+          cd tailwindProject
+          node server.js
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
