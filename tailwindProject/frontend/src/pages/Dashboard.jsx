@@ -7,6 +7,7 @@ import ReactECharts from "echarts-for-react";
 import * as echarts from "echarts";
 import { useOutletContext } from "react-router-dom";
 
+const API_URL = "https://projetofinanceirobackend.onrender.com";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -20,7 +21,7 @@ export default function Dashboard({ usuarioID }) {
     useEffect(() => {
         async function fetchTransacoes() {
             try {
-                const res = await fetch(`http://localhost:3001/transacoes/${usuarioID}`);
+                const res = await fetch(`${API_URL}/transacoes/${usuarioID}`);
                 const dados = await res.json();
                 setTransacoes(dados);
             } catch (err) {
