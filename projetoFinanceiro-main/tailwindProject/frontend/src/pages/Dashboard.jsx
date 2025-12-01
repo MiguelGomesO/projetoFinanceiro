@@ -13,10 +13,10 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-export default function Dashboard({ usuarioID }) {
+export default function Dashboard() {
     const [transacoes, setTransacoes] = useState([]);
 
-    const { darkMode } = useOutletContext();
+    const { darkMode, usuarioID } = useOutletContext();
 
     useEffect(() => {
         async function fetchTransacoes() {
